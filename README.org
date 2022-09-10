@@ -1,0 +1,10 @@
+#+TITLE: Integer
+
+* Overview
+Integer wrappers to support bounded integers without mixing signed and unsigned arithmetic.
+
+*  Work
+** TODO Add prefix increment and decrement
+** TODO Add postfix increment and decrement
+** TODO Add concept including signed integral values and wrapped values
+
