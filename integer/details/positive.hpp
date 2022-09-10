@@ -1,6 +1,5 @@
 #pragma once
 
-#include <integer/details/concepts.hpp>
 #include <integer/details/import.hpp>
 #include <integer/details/validate_bounds.hpp>
 #include <integer/details/wrapper.hpp>

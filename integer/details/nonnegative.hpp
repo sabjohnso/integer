@@ -3,7 +3,9 @@
 //
 // ... integer header files
 //
+#include <integer/details/import.hpp>
 #include <integer/details/validate_bounds.hpp>
+#include <integer/details/wrapper.hpp>
 
 namespace integer::details {
 
