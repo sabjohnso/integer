@@ -13,8 +13,13 @@ namespace integer::details {
    struct wrapper {
       using value_type = integral_by_bit_count<Bits>;
       using validator = validation<Bits>;
+      static constexpr auto default_value =
+        (validator::inclusive_minimum <= 0 && validator::inclusive_maximum >= 0)
+          ? 0
+          : ((validator::inclusive_minimum > 0) ? validator::inclusive_minimum
+                                                : validator::inclusive_maximum);
 
-      constexpr wrapper() { static_assert(validator::is_valid(value_type{})); }
+      constexpr wrapper() { static_assert(validator::is_valid(default_value)); }
 
       template<signed_integral U>
       constexpr wrapper(U input) : value_{validator::check(input)} {}
@@ -28,43 +33,43 @@ namespace integer::details {
       }
 
       wrapper&
-      operator-=(signed_integral auto input) {
+      operator-=(auto input) {
          *this = value_ - input;
          return *this;
       }
 
       wrapper&
-      operator*=(signed_integral auto input) {
+      operator*=(auto input) {
          *this = value_ * input;
          return *this;
       }
 
       wrapper&
-      operator/=(signed_integral auto input) {
+      operator/=(auto input) {
          *this = value_ * input;
          return *this;
       }
 
       wrapper&
-      operator%=(signed_integral auto input) {
+      operator%=(auto input) {
          *this = value_ * input;
          return *this;
       }
 
       wrapper&
-      operator<<=(signed_integral auto input) {
+      operator<<=(auto input) {
          *this = value_ << input;
          return *this;
       }
 
       wrapper&
-      operator>>=(signed_integral auto input) {
+      operator>>=(auto input) {
          *this = value_ >> input;
          return *this;
       }
 
    private:
-      value_type value_{};
+      value_type value_{default_value};
    };
 
 } // end of namespace integer::details

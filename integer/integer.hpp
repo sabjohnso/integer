@@ -6,6 +6,7 @@
 #include <integer/details/concepts.hpp>
 #include <integer/details/integer.hpp>
 #include <integer/details/nonnegative.hpp>
+#include <integer/details/positive.hpp>
 #include <integer/details/wrapper.hpp>
 
 namespace integer {
@@ -21,5 +22,8 @@ namespace integer {
 
    using details::nonnegative;
    using details::nonnegative_with_assertions;
+
+   using details::positive;
+   using details::positive_with_assertions;
 
 } // end of namespace integer

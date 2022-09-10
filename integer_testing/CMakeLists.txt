@@ -13,3 +13,4 @@ endmacro()
 
 integer_add_test(integer integer_test integer_test.cpp)
 integer_add_test(nonnegative nonnegative_test nonnegative_test.cpp)
+integer_add_test(positive positive_test positive_test.cpp)
