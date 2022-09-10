@@ -10,3 +10,6 @@ macro(integer_add_test test_name exe_name)
     CXX_STANDARD ${integer_CXX_STANDARD})
   add_test(${test_name} ${exe_name})
 endmacro()
+
+integer_add_test(integer integer_test integer_test.cpp)
+integer_add_test(nonnegative nonnegative_test nonnegative_test.cpp)
